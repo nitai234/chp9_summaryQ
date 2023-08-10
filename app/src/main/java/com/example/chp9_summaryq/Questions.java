@@ -43,7 +43,8 @@ public class Questions
         questions.add(q15);
     }
 
-    public void setCurrent(int current) {
+    public void setCurrent(int current)
+    {
         this.current = current;
     }
 
