@@ -1,15 +1,15 @@
 package com.example.chp9_summaryq;
 
-import java.util.ArrayList;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Questions
 {
-    private int current = 0;
-    private ArrayList <Question> questions;
+    private Queue <Question> questions = new PriorityQueue<Question>();
 
     public Questions()
     {
-        questions = new ArrayList<Question>();
         Question q1 = new Question("23 + 9", "34", "32", "45", "29", 2);
         Question q2 = new Question("123 * 34", "5008", "4632", "4182", "3965", 3);
         Question q3 = new Question("מהי העיר בירה של עירק", "בגדאד", "טהרן", "ארביל", "פריז", 1);
@@ -22,7 +22,7 @@ public class Questions
         Question q10 = new Question("כמה שעות אריות ישנים ביום", "12", "20", "6", "16", 2);
         Question q11 = new Question("295 / 5", "59", "61", "53", "49", 1);
         Question q12 = new Question("כמה יבשות יש", "6", "7", "8", "9", 2);
-        Question q13 = new Question("1+1", "2", "2", "4", "11",2);
+        Question q13 = new Question("1+1", "3", "2", "4", "11",2);
         Question q14 = new Question("מהו האיבר המיותר בגוף", "מוח", "לבלב", "ציפורן של הזרת", "תוספתן", 4);
         Question q15 = new Question("כמה שאלות יש בשאלון הזה", "20", "16", "15", "30", 3);
 
@@ -43,20 +43,13 @@ public class Questions
         questions.add(q15);
     }
 
-    public void setCurrent(int current)
-    {
-        this.current = current;
-    }
 
-    public void setQuestions(ArrayList<Question> questions) {
+    public void setQuestions(Queue <Question> questions) {
         this.questions = questions;
     }
 
-    public int getCurrent() {
-        return current;
-    }
 
-    public ArrayList<Question> getQuestions() {
+    public Queue <Question> getQuestions() {
         return questions;
     }
 }

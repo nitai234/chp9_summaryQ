@@ -5,54 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".Settins">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="הגדרות"
         android:layout_gravity="center"
-        android:text="מסך ראשי"
-        android:textSize="40sp"/>
-
-
-
+        android:textSize="40sp" />
 
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="התחל לשחק"
+        android:backgroundTint="#B0D2F4"
+        android:layout_marginTop="150dp"
+        android:text="הוסף רקע"
         android:textSize="30sp"
         android:textColor="#000000"
-        android:backgroundTint="#B0D2F4"
-        android:id="@+id/playGame"/>
+        android:id="@+id/addBack"/>
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="ניקוד הכי גבוה"
+        android:backgroundTint="#B0D2F4"
+        android:layout_marginTop="10dp"
+        android:text="אפס ניקוד גבוה"
         android:textSize="30sp"
         android:textColor="#000000"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#B0D2F4"
-        android:id="@+id/highScore"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lastGamePoints"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="ניקוד של המשחק האחרון:\n"
-        android:textSize="30sp"
-        android:textColor="#FF0000"/>
-    <ImageView
+        android:id="@+id/zeroHighScore"/>
+    <Button
         android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:id="@+id/imv"/>
-
+        android:backgroundTint="#B0D2F4"
+        android:layout_marginTop="100dp"
+        android:text="חזור"
+        android:textSize="30sp"
+        android:textColor="#000000"
+        android:id="@+id/back"/>
 
 </LinearLayout>
