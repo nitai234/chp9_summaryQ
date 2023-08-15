@@ -6,10 +6,11 @@ import java.util.Queue;
 
 public class Questions
 {
-    private Queue <Question> questions = new PriorityQueue<Question>();
+    private Queue <Question> questions;
 
     public Questions()
     {
+        questions = new PriorityQueue<Question>();
         Question q1 = new Question("23 + 9", "34", "32", "45", "29", 2);
         Question q2 = new Question("123 * 34", "5008", "4632", "4182", "3965", 3);
         Question q3 = new Question("מהי העיר בירה של עירק", "בגדאד", "טהרן", "ארביל", "פריז", 1);
@@ -25,6 +26,7 @@ public class Questions
         Question q13 = new Question("1+1", "3", "2", "4", "11",2);
         Question q14 = new Question("מהו האיבר המיותר בגוף", "מוח", "לבלב", "ציפורן של הזרת", "תוספתן", 4);
         Question q15 = new Question("כמה שאלות יש בשאלון הזה", "20", "16", "15", "30", 3);
+
 
         questions.add(q1);
         questions.add(q2);

@@ -15,7 +15,7 @@ public class TriviaActivity extends AppCompatActivity implements View.OnClickLis
     Button ans1, ans2, ans3, ans4;
     TextView tvquestion, tvquestionNum, tvpoints;
 
-    int points = 0, questionNum = 0;
+    int points, questionNum;
 
     SharedPreferences spHighScore;
     SharedPreferences.Editor editor;
@@ -28,6 +28,9 @@ public class TriviaActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trivia);
 
+        questionNum = 0;
+        points = 0;
+            
         ans1 = findViewById(R.id.ans1);
         ans2 = findViewById(R.id.ans2);
         ans3 = findViewById(R.id.ans3);

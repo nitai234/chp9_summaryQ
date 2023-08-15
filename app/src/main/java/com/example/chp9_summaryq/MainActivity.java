@@ -3,10 +3,10 @@ package com.example.chp9_summaryq;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,7 +25,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Dialog highScoreD;
 
     SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
+    ActivityResultLauncher<Intent> startForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result.getClass().equals(TriviaActivity.class))
+            {
+                int points = result.getData().getExtras().getInt("points");
+                tvHighScore.setText("ניקוד של המשחק האחרון: \n" + points);
+            }
+        }
+    }
+    );
 
 
     @Override
@@ -38,9 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         highScore = findViewById(R.id.highScore);
         lastGamePoints = findViewById(R.id.lastGamePoints);
 
+
+
         game.setOnClickListener(this);
         highScore.setOnClickListener(this);
-
 
 
     }
@@ -52,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == game)
         {
             Intent intent = new Intent(this, TriviaActivity.class);
-           startActivityForResult(intent, 0);
+
+            startForResult.launch(intent);
         }
         else if (view == highScore)
         {
@@ -84,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.mine_menu, menu);
         menu.getItem(0).setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS);
-
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item)
